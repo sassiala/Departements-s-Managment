@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MVC.Views.Employe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEmb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salaire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departement.NomDep)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEmb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salaire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departement.NomDep)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Matr }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Matr }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Matr })
+        </td>
+    </tr>
+}
+
+</table>

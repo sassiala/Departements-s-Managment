@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departement">
+    <Key>
+      <PropertyRef Name="NumDep" />
+    </Key>
+    <Property Name="NumDep" Type="int" Nullable="false" />
+    <Property Name="NomDep" Type="varchar" MaxLength="50" />
+    <Property Name="Lieu" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="Matr" />
+    </Key>
+    <Property Name="Matr" Type="int" Nullable="false" />
+    <Property Name="NomE" Type="varchar" MaxLength="50" />
+    <Property Name="Post" Type="varchar" MaxLength="50" />
+    <Property Name="DateEmb" Type="date" />
+    <Property Name="Sup" Type="int" />
+    <Property Name="Salaire" Type="int" />
+    <Property Name="Comm" Type="int" />
+    <Property Name="NumDep" Type="int" />
+  </EntityType>
+  <EntityType Name="Participation">
+    <Key>
+      <PropertyRef Name="Matr" />
+      <PropertyRef Name="CodeP" />
+    </Key>
+    <Property Name="Matr" Type="int" Nullable="false" />
+    <Property Name="CodeP" Type="int" Nullable="false" />
+    <Property Name="Fonction" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Projet">
+    <Key>
+      <PropertyRef Name="CodeP" />
+    </Key>
+    <Property Name="CodeP" Type="int" Nullable="false" />
+    <Property Name="NomP" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Employe_Departement">
+    <End Role="Departement" Type="Self.Departement" Multiplicity="0..1" />
+    <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departement">
+        <PropertyRef Name="NumDep" />
+      </Principal>
+      <Dependent Role="Employe">
+        <PropertyRef Name="NumDep" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Participation_Employe">
+    <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+    <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employe">
+        <PropertyRef Name="Matr" />
+      </Principal>
+      <Dependent Role="Participation">
+        <PropertyRef Name="Matr" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Participation_Projet">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="1" />
+    <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="CodeP" />
+      </Principal>
+      <Dependent Role="Participation">
+        <PropertyRef Name="CodeP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataBaseModelStoreContainer">
+    <EntitySet Name="Departement" EntityType="Self.Departement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Participation" EntityType="Self.Participation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projet" EntityType="Self.Projet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employe_Departement" Association="Self.FK_Employe_Departement">
+      <End Role="Departement" EntitySet="Departement" />
+      <End Role="Employe" EntitySet="Employe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Participation_Employe" Association="Self.FK_Participation_Employe">
+      <End Role="Employe" EntitySet="Employe" />
+      <End Role="Participation" EntitySet="Participation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Participation_Projet" Association="Self.FK_Participation_Projet">
+      <End Role="Projet" EntitySet="Projet" />
+      <End Role="Participation" EntitySet="Participation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

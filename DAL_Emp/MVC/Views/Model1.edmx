@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Departement">
+          <Key>
+            <PropertyRef Name="NumDep" />
+          </Key>
+          <Property Name="NumDep" Type="int" Nullable="false" />
+          <Property Name="NomDep" Type="varchar" MaxLength="50" />
+          <Property Name="Lieu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="Matr" />
+          </Key>
+          <Property Name="Matr" Type="int" Nullable="false" />
+          <Property Name="NomE" Type="varchar" MaxLength="50" />
+          <Property Name="Post" Type="varchar" MaxLength="50" />
+          <Property Name="DateEmb" Type="date" />
+          <Property Name="Sup" Type="int" />
+          <Property Name="Salaire" Type="int" />
+          <Property Name="Comm" Type="int" />
+          <Property Name="NumDep" Type="int" />
+        </EntityType>
+        <EntityType Name="Participation">
+          <Key>
+            <PropertyRef Name="Matr" />
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="Matr" Type="int" Nullable="false" />
+          <Property Name="CodeP" Type="int" Nullable="false" />
+          <Property Name="Fonction" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Projet">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="CodeP" Type="int" Nullable="false" />
+          <Property Name="NomP" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Employe_Departement">
+          <End Role="Departement" Type="Self.Departement" Multiplicity="0..1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departement">
+              <PropertyRef Name="NumDep" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="NumDep" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participation_Employe">
+          <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+          <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employe">
+              <PropertyRef Name="Matr" />
+            </Principal>
+            <Dependent Role="Participation">
+              <PropertyRef Name="Matr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participation_Projet">
+          <End Role="Projet" Type="Self.Projet" Multiplicity="1" />
+          <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projet">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="Participation">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataBaseModelStoreContainer">
+          <EntitySet Name="Departement" EntityType="Self.Departement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participation" EntityType="Self.Participation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projet" EntityType="Self.Projet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Employe_Departement" Association="Self.FK_Employe_Departement">
+            <End Role="Departement" EntitySet="Departement" />
+            <End Role="Employe" EntitySet="Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participation_Employe" Association="Self.FK_Participation_Employe">
+            <End Role="Employe" EntitySet="Employe" />
+            <End Role="Participation" EntitySet="Participation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participation_Projet" Association="Self.FK_Participation_Projet">
+            <End Role="Projet" EntitySet="Projet" />
+            <End Role="Participation" EntitySet="Participation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Departement">
+          <Key>
+            <PropertyRef Name="NumDep" />
+          </Key>
+          <Property Name="NumDep" Type="Int32" Nullable="false" />
+          <Property Name="NomDep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employes" Relationship="Self.FK_Employe_Departement" FromRole="Departement" ToRole="Employe" />
+        </EntityType>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="Matr" />
+          </Key>
+          <Property Name="Matr" Type="Int32" Nullable="false" />
+          <Property Name="NomE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateEmb" Type="DateTime" Precision="0" />
+          <Property Name="Sup" Type="Int32" />
+          <Property Name="Salaire" Type="Int32" />
+          <Property Name="Comm" Type="Int32" />
+          <Property Name="NumDep" Type="Int32" />
+          <NavigationProperty Name="Departement" Relationship="Self.FK_Employe_Departement" FromRole="Employe" ToRole="Departement" />
+          <NavigationProperty Name="Participations" Relationship="Self.FK_Participation_Employe" FromRole="Employe" ToRole="Participation" />
+        </EntityType>
+        <EntityType Name="Participation">
+          <Key>
+            <PropertyRef Name="Matr" />
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="Matr" Type="Int32" Nullable="false" />
+          <Property Name="CodeP" Type="Int32" Nullable="false" />
+          <Property Name="Fonction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employe" Relationship="Self.FK_Participation_Employe" FromRole="Participation" ToRole="Employe" />
+          <NavigationProperty Name="Projet" Relationship="Self.FK_Participation_Projet" FromRole="Participation" ToRole="Projet" />
+        </EntityType>
+        <EntityType Name="Projet">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="CodeP" Type="Int32" Nullable="false" />
+          <Property Name="NomP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Participations" Relationship="Self.FK_Participation_Projet" FromRole="Projet" ToRole="Participation" />
+        </EntityType>
+        <Association Name="FK_Employe_Departement">
+          <End Role="Departement" Type="Self.Departement" Multiplicity="0..1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departement">
+              <PropertyRef Name="NumDep" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="NumDep" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participation_Employe">
+          <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+          <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employe">
+              <PropertyRef Name="Matr" />
+            </Principal>
+            <Dependent Role="Participation">
+              <PropertyRef Name="Matr" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Participation_Projet">
+          <End Role="Projet" Type="Self.Projet" Multiplicity="1" />
+          <End Role="Participation" Type="Self.Participation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projet">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="Participation">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departements" EntityType="Self.Departement" />
+          <EntitySet Name="Employes" EntityType="Self.Employe" />
+          <EntitySet Name="Participations" EntityType="Self.Participation" />
+          <EntitySet Name="Projets" EntityType="Self.Projet" />
+          <AssociationSet Name="FK_Employe_Departement" Association="Self.FK_Employe_Departement">
+            <End Role="Departement" EntitySet="Departements" />
+            <End Role="Employe" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participation_Employe" Association="Self.FK_Participation_Employe">
+            <End Role="Employe" EntitySet="Employes" />
+            <End Role="Participation" EntitySet="Participations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Participation_Projet" Association="Self.FK_Participation_Projet">
+            <End Role="Projet" EntitySet="Projets" />
+            <End Role="Participation" EntitySet="Participations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataBaseModelStoreContainer" CdmEntityContainer="DataBaseEntities">
+          <EntitySetMapping Name="Departements">
+            <EntityTypeMapping TypeName="DataBaseModel.Departement">
+              <MappingFragment StoreEntitySet="Departement">
+                <ScalarProperty Name="NumDep" ColumnName="NumDep" />
+                <ScalarProperty Name="NomDep" ColumnName="NomDep" />
+                <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employes">
+            <EntityTypeMapping TypeName="DataBaseModel.Employe">
+              <MappingFragment StoreEntitySet="Employe">
+                <ScalarProperty Name="Matr" ColumnName="Matr" />
+                <ScalarProperty Name="NomE" ColumnName="NomE" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="DateEmb" ColumnName="DateEmb" />
+                <ScalarProperty Name="Sup" ColumnName="Sup" />
+                <ScalarProperty Name="Salaire" ColumnName="Salaire" />
+                <ScalarProperty Name="Comm" ColumnName="Comm" />
+                <ScalarProperty Name="NumDep" ColumnName="NumDep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participations">
+            <EntityTypeMapping TypeName="DataBaseModel.Participation">
+              <MappingFragment StoreEntitySet="Participation">
+                <ScalarProperty Name="Matr" ColumnName="Matr" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projets">
+            <EntityTypeMapping TypeName="DataBaseModel.Projet">
+              <MappingFragment StoreEntitySet="Projet">
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="NomP" ColumnName="NomP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

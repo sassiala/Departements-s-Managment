@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Société App</h1>
+    <p class="lead">Société qui gère les particpations des employées dans des projets de la société </p>
+   
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("departement","Index","departement")</h2>
+       
+        <p >Les departements de la société </p>
+
+
+       
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Employee", "Index", "Employee")</h2>
+        <p>Les employés de la société </p>
+      
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Projet", "Index", "Projet")</h2>
+        
+        <p>Les projets généres par les employés</p>
+
+     
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Participation", "Index", "Participation")</h2>
+
+        <p>Les participations des employes </p>
+    </div>
+</div>

@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F1CAA1D-DA0B-4584-A4E7-D9FDC38301AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsForms</RootNamespace>
+    <AssemblyName>WindowsForms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AfficheDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficheDepartement.Designer.cs">
+      <DependentUpon>AfficheDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AfficheEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficheEmploye.Designer.cs">
+      <DependentUpon>AfficheEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AfficheProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficheProjet.Designer.cs">
+      <DependentUpon>AfficheProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouteDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouteDepartement.Designer.cs">
+      <DependentUpon>AjouteDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouteParticipation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouteParticipation.Designer.cs">
+      <DependentUpon>AjouteParticipation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouteProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouteProjet.Designer.cs">
+      <DependentUpon>AjouteProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouterEmploye.Designer.cs">
+      <DependentUpon>AjouterEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteDepartement.Designer.cs">
+      <DependentUpon>DeleteDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteEmploye.Designer.cs">
+      <DependentUpon>DeleteEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteParticipation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteParticipation.Designer.cs">
+      <DependentUpon>DeleteParticipation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteProjet.Designer.cs">
+      <DependentUpon>DeleteProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartement.Designer.cs">
+      <DependentUpon>FormDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmploye.Designer.cs">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParticipation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParticipation.Designer.cs">
+      <DependentUpon>FormParticipation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProjet.Designer.cs">
+      <DependentUpon>FormProjet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateDepartement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDepartement.Designer.cs">
+      <DependentUpon>UpdateDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateParticipation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateParticipation.Designer.cs">
+      <DependentUpon>UpdateParticipation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProjet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateProjet.Designer.cs">
+      <DependentUpon>UpdateProjet.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AfficheDepartement.resx">
+      <DependentUpon>AfficheDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficheEmploye.resx">
+      <DependentUpon>AfficheEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficheProjet.resx">
+      <DependentUpon>AfficheProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouteDepartement.resx">
+      <DependentUpon>AjouteDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouteParticipation.resx">
+      <DependentUpon>AjouteParticipation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouteProjet.resx">
+      <DependentUpon>AjouteProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterEmploye.resx">
+      <DependentUpon>AjouterEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteDepartement.resx">
+      <DependentUpon>DeleteDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteEmploye.resx">
+      <DependentUpon>DeleteEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteParticipation.resx">
+      <DependentUpon>DeleteParticipation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteProjet.resx">
+      <DependentUpon>DeleteProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDepartement.resx">
+      <DependentUpon>FormDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmploye.resx">
+      <DependentUpon>FormEmploye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParticipation.resx">
+      <DependentUpon>FormParticipation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjet.resx">
+      <DependentUpon>FormProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UpdateDepartement.resx">
+      <DependentUpon>UpdateDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateParticipation.resx">
+      <DependentUpon>UpdateParticipation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateProjet.resx">
+      <DependentUpon>UpdateProjet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Program\Program.csproj">
+      <Project>{733ba06d-f7f4-4be2-8394-7fecb8295922}</Project>
+      <Name>Program</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

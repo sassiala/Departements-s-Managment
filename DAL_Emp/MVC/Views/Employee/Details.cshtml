@@ -1,0 +1,74 @@
+﻿@model MVC.Views.Employe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employe</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEmb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEmb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departement.NomDep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departement.NomDep)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Matr }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

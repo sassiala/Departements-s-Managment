@@ -1,0 +1,7 @@
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\obj\Debug\Program.csprojResolveAssemblyReference.cache
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\obj\Debug\Program.Properties.Resources.resources
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\obj\Debug\Program.csproj.GenerateResource.Cache
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\bin\Debug\Program.exe
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\bin\Debug\Program.pdb
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\obj\Debug\Program.exe
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Program\obj\Debug\Program.pdb

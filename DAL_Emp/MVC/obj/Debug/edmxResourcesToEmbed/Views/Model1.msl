@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataBaseModelStoreContainer" CdmEntityContainer="DataBaseEntities">
+    <EntitySetMapping Name="Departements">
+      <EntityTypeMapping TypeName="DataBaseModel.Departement">
+        <MappingFragment StoreEntitySet="Departement">
+          <ScalarProperty Name="NumDep" ColumnName="NumDep" />
+          <ScalarProperty Name="NomDep" ColumnName="NomDep" />
+          <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employes">
+      <EntityTypeMapping TypeName="DataBaseModel.Employe">
+        <MappingFragment StoreEntitySet="Employe">
+          <ScalarProperty Name="Matr" ColumnName="Matr" />
+          <ScalarProperty Name="NomE" ColumnName="NomE" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="DateEmb" ColumnName="DateEmb" />
+          <ScalarProperty Name="Sup" ColumnName="Sup" />
+          <ScalarProperty Name="Salaire" ColumnName="Salaire" />
+          <ScalarProperty Name="Comm" ColumnName="Comm" />
+          <ScalarProperty Name="NumDep" ColumnName="NumDep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Participations">
+      <EntityTypeMapping TypeName="DataBaseModel.Participation">
+        <MappingFragment StoreEntitySet="Participation">
+          <ScalarProperty Name="Matr" ColumnName="Matr" />
+          <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+          <ScalarProperty Name="Fonction" ColumnName="Fonction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projets">
+      <EntityTypeMapping TypeName="DataBaseModel.Projet">
+        <MappingFragment StoreEntitySet="Projet">
+          <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+          <ScalarProperty Name="NomP" ColumnName="NomP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

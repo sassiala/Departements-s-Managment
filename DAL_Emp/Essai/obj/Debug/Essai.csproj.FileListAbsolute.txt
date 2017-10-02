@@ -1,0 +1,8 @@
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\bin\Debug\Essai.exe.config
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\obj\Debug\Essai.csprojResolveAssemblyReference.cache
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\bin\Debug\Essai.exe
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\bin\Debug\Essai.pdb
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\bin\Debug\Program.exe
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\bin\Debug\Program.pdb
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\obj\Debug\Essai.exe
+C:\Users\ALA\Documents\Visual Studio 2013\Projects\GestionDep\DAL_Emp\Essai\obj\Debug\Essai.pdb
